@@ -1,0 +1,7 @@
+#!/bin/bash
+
+basedir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+$basedir/tcpserver 7777 >$basedir/rush.log 2>&1 &
+
+# Use "lsof -Pni|grep 7777" to find the pid to kill if "$basedir/stop_daemon" doesn't work.
